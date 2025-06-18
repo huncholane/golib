@@ -33,7 +33,7 @@ func (ob *OrderBy) Append(field OrderByField) {
 
 func OrderByFromString(allowed_fields map[string]struct{}, s string) OrderBy {
 	ob := OrderBy{}
-	for _, raw := range strings.Split(s, ",") {
+	for raw := range strings.SplitSeq(s, ",") {
 		dir := "ASC"
 		if raw[0] == '-' {
 			raw = raw[1:]
